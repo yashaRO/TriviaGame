@@ -88,7 +88,8 @@ function loadAnswers(set) {
     secs = 6;
     startTimer = setTimeout(function(){
         clearInterval(timer)
-        getQuestion()        
+        getQuestion()
+		$('#time').text('6 seconds left!')
     },6000)
     timer = setInterval(function() {
         secs--
@@ -156,13 +157,16 @@ $(document).ready(function() {
         }
     })
 	$('.answers p').click(function() {
-		if ($(this).hasClass('true')) {
-			score++;
+		if (quizStart) {
+			if ($(this).hasClass('true')) {
+				score++;
+			}
+        	$('.answers p').removeClass('true')
+        	clearTimeout(startTimer)
+        	clearInterval(timer)
+        	getQuestion()
+			$('#time').text('6 seconds left!')
 		}
-        $('.answers p').removeClass('true')
-        clearTimeout(startTimer)
-        clearInterval(timer)
-        getQuestion()
 	})	
     $('.answers p').mouseleave(function() {
         $(this).css({
