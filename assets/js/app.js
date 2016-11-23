@@ -106,6 +106,7 @@ function endGame() {
 	switch(score) {
 		case 0:
 			message = 'You literally know nothing about games. Leave!'
+			$('audio').attr('src','assets/music/sanictheme.mp3')
 			break;
 		case 1:
 		case 2:
@@ -126,6 +127,7 @@ function endGame() {
 			break;
 		case 10:
 			message = "PERFECTION!"
+			$('audio').attr('src','assets/music/sonictheme.mp3')
 			break;
 			
 	}
