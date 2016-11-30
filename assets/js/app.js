@@ -104,6 +104,7 @@ function endGame() {
 	$('.answers').empty()
 	$('.answers').html('YOU SCORED ' + score + ' OUT OF 10<br>')
 	switch(score) {
+			//Was going to get songs for the other four, but nah. Spend effort elsewhere.
 		case 0:
 			message = 'You literally know nothing about games. Leave!'
 			$('audio').attr('src','assets/music/sanictheme.mp3')
@@ -166,8 +167,9 @@ $(document).ready(function() {
         	$('.answers p').removeClass('true')
         	clearTimeout(startTimer)
         	clearInterval(timer)
-        	getQuestion()
 			$('#time').text('6 seconds left!')
+        	getQuestion()
+			
 		}
 	})	
     $('.answers p').mouseleave(function() {
